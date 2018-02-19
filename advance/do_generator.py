@@ -48,9 +48,9 @@ for n in g:
 # 如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value
 g = (x for x in range(10))
 while True:
-    # try:
+    try:
         x = next(g)
         print('g:', x)
-    # except StopIteration as e:
-    #     print('Generator return value:', e.value)
-    #     break
+    except StopIteration as e:
+        print('Generator return value:', e.value)
+        break
