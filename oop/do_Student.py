@@ -13,7 +13,8 @@ __author__ = 'H_DJ'
  __name两个下划线为private成员变量，只能本类使用，_name一个下划线为protected成员变量，可以在本类和子类中使用。
  
  
- 实例属性和类属性
+ 实例属性 ：实例属性只能本实例能访问
+ 类属性 ：该类的全部实例都能访问
  
 '''
 
@@ -21,8 +22,8 @@ __author__ = 'H_DJ'
 # 下面定义一个学生的类
 class Student(object):
     profession = 'Student'  # 定义一个公开变量，职业； 所有的实例都可以访问
-    _name = None  # 私有变量, 外界不可直接访问
-    _age = None
+    __name = None  # 私有变量, 外界不可直接访问
+    __age = None
 
     '__init__ 初始化方法， 当有定义有__init__方法时，创建类实例时会自动反射获取该方法进行初始化'
 
@@ -50,4 +51,5 @@ class Student(object):
 
 s = Student('abc', 20)
 s.read_book('python ')
-print(s.get_name(),s.get_age())
+print(s.get_name(), s.get_age())
+print(s._name)
