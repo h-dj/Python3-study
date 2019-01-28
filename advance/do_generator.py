@@ -45,7 +45,7 @@ for n in g:
     print(n)
 
 # 用while循环调用generator时，发现拿不到generator的return语句的返回值。
-# 如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value
+# 如果想要拿到返回值，必须捕获StopIteration错误，返回值包含在StopIteration的value(这里不懂！！)
 g = (x for x in range(10))
 while True:
     try:
